@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CIIT Affordable Foods</title>
+
+    <script src="https://kit.fontawesome.com/7c7d415772.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles2.css">
+  </head>
+
+  <body>
+    <!--NAVIGATION BAR WITH LOGO-->
+    <header class="header">
+      <a href="index1.html" class="logo"><img src="pictures/logo.png"></a>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="index3.html">Resto</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <section class="main">
+      <!--  -->
+      <div class="information">
+        <div class="row">
+          <div class="col maininfo">
+            <select id="food-stall-dropdown" onchange="selectFoodStall()">
+              <option value="" disabled selected>Select Your Food Option</option>
+              <option value="1">Food Stall 1 - Budget</option>
+              <option value="2">Food Stall 2 - Affordable</option>
+              <option value="3">Food Stall 3 - Moderate</option>
+              <option value="4">Food Stall 4 - Pricey</option>
+              <option value="5">Food Stall 5 - Premium</option>
+            </select>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit delectus laboriosam ab ad provident maiores eaque saepe a. Reiciendis impedit necessitatibus nostrum fuga possimus in voluptas cumque cum consequuntur sapiente.</p>
+            <a href="" class="hero-btn">Menu</a>
+            <a href="" class="hero-btn">Reviews</a>
+          </div>
+          <div class="col mainmaps">
+            <div id="map"></div>
+            <div id="directions-panel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!--FOOTER ENDING-->
+      <footer class="footer">
+        <div class="footer-text">
+          <p>Copyright &copy; 2024 by Alliza Caberte, David Wagan, Vhiane Gulapa, Tesla Manasan | All Rights Reserved</p>
+        </div>
+
+        <div class="footer-iconTop">
+          <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
+        </div>
+      </footer>
+
+
+
+    <!-- javascriptt -->
+    <script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-vNnJ1hBE_AN4JpLm8uFyIZZlJypZ3VE&callback=initMap&libraries=places"></script>
+    <script src="index2.js"></script>
+
+  </body>
+</html>
