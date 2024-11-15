@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | CIIT Affordable Foods</title>
 
-    <script src="https://kit.fontawesome.com/7c7d415772.js" crossorigin="anonymous"></script>
     <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="frontstyles.css">
 </head>
@@ -18,11 +17,15 @@
         <a href="front.html" class="logo"><img src="pictures/logo.png"></a>
 
         <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i> <!-- close icon -->
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
         </nav>
 
     </header>
@@ -73,17 +76,17 @@
         <h2 class="contacthead">Contact Us</h2>
 
         <div class="contact-details">
-            <h4><i class="fa-brands fa-square-facebook" style="color: #f5e9ad;"></i>Facebook <i class="fa-brands fa-square-facebook" style="color: #f5e9ad;"></i></h4>
-            <p><a href="https://facebook.com/alliza.caberte/">Alliza Caberte</p>
-            <p><a href="https://www.facebook.com/rrredcrayons">David Wagan</p>
-            <p><a href="https://www.facebook.com/vhiane.angenae">Vhiane Angenae Gulapa</p>
-            <p><a href="https://www.facebook.com/ni.manasan.3">Nick Manasan</p>
-            <h4><i class="fa-solid fa-envelope-open" style="color: #f5e9ad;"></i>Gmail <i class="fa-solid fa-envelope-open" style="color: #f5e9ad;"></i></h4>
+            <h4><i class="fa-brands fa-square-facebook" style="color: #683516;"></i>Facebook <i class="fa-brands fa-square-facebook" style="color: #683516;"></i></h4>
+            <p><a href="https://facebook.com/alliza.caberte/">Alliza Caberte</a></p>
+            <p><a href="https://www.facebook.com/rrredcrayons">David Wagan</a></p>
+            <p><a href="https://www.facebook.com/vhiane.angenae">Vhiane Angenae Gulapa</a></p>
+            <p><a href="https://www.facebook.com/ni.manasan.3">Nick Manasan</a></p>
+            <h4><i class="fa-solid fa-envelope-open" style="color: #683516;"></i>Gmail <i class="fa-solid fa-envelope-open" style="color: #683516;"></i></h4>
             <p>alliza.caberte@ciit.edu.ph</p>
             <p>david.wagan@ciit.edu.ph</p>
             <p>vhiane.gulapa@ciit.edu.ph</p>
             <p>tesla.manasan@ciit.edu.ph</p>
-            <h4><i class="fa-brands fa-discord" style="color: #f5e9ad;"></i>Discord <i class="fa-brands fa-discord" style="color: #f5e9ad;"></i></h4>
+            <h4><i class="fa-brands fa-discord" style="color: #683516;"></i>Discord <i class="fa-brands fa-discord" style="color: #683516;"></i></h4>
             <p>@miyako_saki</p>
             <p>@stroberired</p>
             <p>@caleeiz</p>
@@ -101,5 +104,8 @@
         </div>
     </footer>
 
+    <!--JAVASCRIPT-->
+    <script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
+    <script src="frontjavascript.js"></script>
 </body>
 </html>
