@@ -39,7 +39,7 @@
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scrollbar-color: var(--light-yellow);
+    scrollbar-color: var(--light-peach);
 }
 
 body {

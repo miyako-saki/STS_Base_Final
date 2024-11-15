@@ -18,10 +18,16 @@
       <a href="front.html" class="logo"><img src="resources/pictures/logo.png"></a>
 
       <nav class="navbar">
-        <ul>
-          <li><a href="front.html">Home</a></li>
-          <li><a href="resto.html">Resto</a></li>
-        </ul>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i> <!-- close icon -->
+
+          <ul>
+            <li><a href="front.html">Home</a></li>
+            <li><a href="resto.html">Resto</a></li>
+          </ul>
+
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
       </nav>
 
     </header>
@@ -31,6 +37,7 @@
       <div class="information">
         <div class="row">
           <div class="col maininfo">
+
             <select id="food-stall-dropdown" onchange="selectFoodStall()">
               <option value="" disabled selected>Select Your Food Option</option>
               <option value="1">Food Stall 1 - Budget</option>
@@ -39,16 +46,37 @@
               <option value="4">Food Stall 4 - Pricey</option>
               <option value="5">Food Stall 5 - Premium</option>
             </select>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit delectus laboriosam ab ad provident maiores eaque saepe a. Reiciendis impedit necessitatibus nostrum fuga possimus in voluptas cumque cum consequuntur sapiente.</p>
-            <a href="" class="hero-btn">Menu</a>
-            <a href="" class="hero-btn">Reviews</a>
+
+            <!--Resto-->
+            <div class="resto">
+              <ul>
+                <li><h2>Name: </h2><p>Resto Name</p></li>
+                <li><h2>Contact: </h2><p>Contact Number</p></li>
+              </ul>
+            </div>
+
+            <!--Menu-->
+            <div class="menu">
+              <h2>Menu</h2>
+              <ul>
+                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></li>
+                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></li>
+              </ul>
+            </div>
+            <!--Reviews: No content yet-->
           </div>
+
           <div class="col mainmaps">
+
             <div id="map"></div>
             <div id="directions-panel"></div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
       <!--FOOTER ENDING-->
