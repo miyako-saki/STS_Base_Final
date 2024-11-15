@@ -175,7 +175,7 @@ section {
     height: 5rem;
 }
 /*SECTION 2: FEATURES STYLE*/
-.try{
+.features{
     width: 100%;
     min-height: 90vh;
     margin: auto;
@@ -183,7 +183,7 @@ section {
     position: relative;
 }
 
-.try h2 {
+.features h2 {
     font-size: 5rem;
     text-align: center;
     color: var(--light-peach);
