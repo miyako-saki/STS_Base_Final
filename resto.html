@@ -8,22 +8,30 @@
     <title>Resto | CIIT Affordable Foods</title>
 
     <link rel="icon" href="resources/pictures/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="resources/css/frontstyles.css">
+    <link rel="stylesheet" href="resources/css/restostyles.css">
   </head>
 
   <body>
-    <!--NAVIGATION BAR WITH LOGO-->
+  <!--NAVIGATION BAR WITH LOGO-->
     <header class="header">
       <a href="front.html" class="logo"><img src="resources/pictures/logo.png"></a>
 
       <nav class="navbar">
-        <ul>
-          <li><a href="front.html">Home</a></li>
-          <li><a href="maps.html">Maps</a></li>
-        </ul>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i> <!-- close icon -->
+          <ul>
+            <li><a href="front.html">Home</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
       </nav>
 
     </header>
+
+    <!--JAVASCRIPT-->
+    <script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
+    <script src="resources/javascript/restojavascript.js"></script>
 
   </body>
 
