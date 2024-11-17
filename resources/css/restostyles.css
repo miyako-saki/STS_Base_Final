@@ -133,3 +133,259 @@ section {
         padding: 30px;
     }
 }
+
+/* MENU AND MAPS */
+.information{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col{
+    flex-basis: 45%;
+    border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
+.col.maininfo h1 {
+    margin-bottom: 50px;
+}
+
+.col.maininfo p {
+    margin-bottom: 50px;
+}
+
+#food-stall-dropdown {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--brown);
+    border: 3px solid var(--dark-brown);
+    padding: 12px 30px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+#food-stall-dropdown:hover {
+    border: 3px solid #6f4e37;
+    background: var(--light-yellow);
+    color: black;
+    transition: 1s;
+}
+
+/* RESTO AND MENU */
+.resto ul li {
+    display: inline-block;
+    list-style: none;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.resto ul li h2 {
+    margin-top: 10px;
+    font-size: 30px;
+    color: var(--dark-brown);
+}
+
+.resto ul li p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.menu h2 {
+    font-size: 30px;
+    color: var(--dark-brown);
+}
+
+.menu ul li p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.slider {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    height: fit;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+
+.slider:before, .slider:after {
+    content: "";
+    position: absolute;
+    height: fit;
+    width: 150px;
+    z-index: 2;
+}
+
+.slider:after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider:before {
+    left: 0;
+    top: 0;
+}
+
+.slider .track {
+    display: flex;
+    width: calc(150px * 12);
+    animation: slide 15s 0.5s linear infinite;
+}
+
+.slider .element {
+    width: 150px;
+    background-color: white;
+    padding: 50px 25px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+       transform: translateX(calc(-150px * 3));
+    }
+}
+
+/* MAPS */
+.col.mainmaps #map {
+    margin-top: -80px;
+    height: 40vh;
+    width: 100%;
+}
+
+.col.mainmaps #directions-panel {
+    padding: 20px;
+    background-color: #fed8b1;
+    border-top: 1px solid #6f4e37;
+}
+
+@media(max-width: 900px) {
+    #food-stall-dropdown {
+        font-size: 15px;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .resto ul li h2 {
+        font-size: 20px;
+    }
+    .resto ul li p {
+        font-size: 18px;
+    }
+    .menu h2 {
+        font-size: 20px;
+    }
+    .menu ul li p {
+        font-size: 16px;
+    }
+}
+
+
+/*FOOTER STYLE*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--brown);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+    color: var(--light-peach);
+}
+
+.footer-iconTop a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    background: var(--light-peach);
+    border: .2rem solid var(--light-peach);
+    border-radius: .4rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--dark-brown);
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before {
+    width: 100%;
+}
+
+.footer-iconTop a i {
+    font-size: 20px;
+    color: var(--dark-brown);
+    transition: .5s;
+}
+
+.footer-iconTop a:hover i {
+    color: var(--light-peach);
+}
+
+@media(max-width: 900px) {
+    .footer p {
+        font-size: 20px;
+    }
+    .footer-iconTop a i {
+        font-size: 18px;
+    }
+    .footer-iconTop a {
+        padding: .5rem;
+    }
+}
