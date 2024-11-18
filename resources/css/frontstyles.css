@@ -138,6 +138,7 @@ section {
 
 .home {
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     padding: 0 9%;
@@ -162,19 +163,11 @@ section {
     color: var(--dark-brown);
 }
 
-.home-row{
-    display: flex;
-    justify-content: space-between;
+.home-content a{
+    align-items: center;
+    justify-content: center;
 }
 
-.home-col {
-    flex-basis: 31%;
-    text-align: center;
-    margin-bottom: 5%;
-    padding: 20px 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
 
 @media(max-width: 700px) {
     .home-content h1 {
@@ -182,18 +175,6 @@ section {
     }
     .home-content p {
         font-size: 20px;
-    }
-
-    .home-row{
-        flex-direction: column;
-    }
-    .home-col {
-        padding: 10px 10px;
-        margin-left: 1px;
-        margin-right: 1px;
-    }
-    .home-col a {
-        font-size: 15px;
     }
 }
 
