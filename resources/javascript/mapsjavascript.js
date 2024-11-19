@@ -79,4 +79,4 @@ function hideMenu() {
 
 // lat ang lng for food stalls
 
-// 
+// A&A - 14.62939143390962, 121.04384270896917
