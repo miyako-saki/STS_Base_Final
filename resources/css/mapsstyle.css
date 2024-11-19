@@ -320,3 +320,26 @@ footer {
         padding: .5rem;
     }
 }
+
+/* CATEGORY BUTTONS */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .category-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--light-yellow);
+    border: 2px solid var(--brown);
+    color: var(--dark-brown);
+    cursor: pointer;
+  }
+  
+  .category-buttons button.active {
+    background-color: var(--brown);
+    color: var(--light-peach);
+  }
+  

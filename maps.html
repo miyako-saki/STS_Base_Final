@@ -1,99 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maps | CIIT Affordable Foods</title>
-
-    <script src="https://kit.fontawesome.com/7c7d415772.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="resources/pictures/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="resources/css/mapsstyle.css">
-  </head>
-
-  <body>
-    <!--NAVIGATION BAR WITH LOGO-->
-    <header class="header">
-      <a href="front.html" class="logo"><img src="resources/pictures/logo.png"></a>
-
-      <nav class="navbar">
-        <div class="nav-links" id="navLinks">
-          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i> <!-- close icon -->
-
-          <ul>
-            <li><a href="front.html">Home</a></li>
-          </ul>
-
-        </div>
-        <i class="fa-solid fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
-      </nav>
-
-    </header>
-
-    <section class="main">
-      <!--  -->
-      <div class="information">
-        <div class="row">
-          <div class="col maininfo">
-
-            <select id="food-stall-dropdown" onchange="selectFoodStall()">
-              <option value="" disabled selected>Select Your Food Option</option>
-              <option value="1">A&A Cafe Food & Beverage</option>
-              <option value="2">Food Stall 2 - Affordable</option>
-              <option value="3">Food Stall 3 - Moderate</option>
-              <option value="4">Food Stall 4 - Pricey</option>
-              <option value="5">Food Stall 5 - Premium</option>
-            </select>
-
-            <!--Resto-->
-            <div class="resto">
-              <ul>
-                <li><h2>Name: </h2><p>Resto Name</p></li>
-                <li><h2>Price Range: </h2><p>Price Range</p></li>
-              </ul>
-            </div>
-
-            <!--Menu-->
-            <div class="menu">
-              <h2>Menu</h2>
-              <ul>
-                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></li>
-                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col mainmaps">
-
-            <div id="map"></div>
-            <div id="directions-panel"></div>
-
-          </div>
-
-        </div>
-
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps | CIIT Affordable Foods</title>
+  <script src="https://kit.fontawesome.com/7c7d415772.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="resources/pictures/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="resources/css/mapsstyle.css">
+</head>
+<body>
+  <!-- NAVIGATION BAR WITH LOGO -->
+  <header class="header">
+    <a href="front.html" class="logo"><img src="resources/pictures/logo.png" alt="CIIT Logo"></a>
+    <nav class="navbar">
+      <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="front.html">Home</a></li>
+        </ul>
       </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </header>
 
-    </section>
+  <section class="main">
+    <div class="information">
+      <div class="row">
+        <!-- Food Selection -->
+        <div class="col maininfo">
+          <div class="category-buttons">
+            <button onclick="setActiveCategory(this)" data-category="budget">Budget</button>
+            <button onclick="setActiveCategory(this)" data-category="affordable">Affordable</button>
+            <button onclick="setActiveCategory(this)" data-category="expensive">Expensive</button>
+          </div>
 
-      <!--FOOTER ENDING-->
-      <footer class="footer">
-        <div class="footer-text">
-          <p>Copyright &copy; 2024 by Alliza Caberte, David Wagan, Vhiane Gulapa, Tesla Manasan | All Rights Reserved</p>
+          <select id="food-stall-dropdown" onchange="selectFoodStall()">
+            <option value="" disabled selected>Select Your Food Option</option>
+          </select>
+
+          <!-- Restaurant Info -->
+          <div class="resto">
+            <ul>
+              <li><h2>Name: </h2><p>Resto Name</p></li>
+              <li><h2>Price Range: </h2><p>Price Range</p></li>
+            </ul>
+          </div>
+
+          <!-- Menu -->
+          <div class="menu">
+            <h2>Menu</h2>
+            <ul>
+              <li><p>Sample menu item 1.</p></li>
+              <li><p>Sample menu item 2.</p></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="footer-iconTop">
-          <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
+        <!-- Maps Section -->
+        <div class="col mainmaps">
+          <div id="map"></div>
+          <div id="directions-panel"></div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>&copy; 2024 Alliza Caberte, David Wagan, Vhiane Gulapa, Tesla Manasan | All Rights Reserved</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
+    </div>
+  </footer>
 
-
-    <!-- javascriptt -->
-    <script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-vNnJ1hBE_AN4JpLm8uFyIZZlJypZ3VE&callback=initMap&libraries=places"></script>
-    <script src="resources/javascript/mapsjavascript.js"></script>
-
-  </body>
+  <!-- JavaScript -->
+  <script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-vNnJ1hBE_AN4JpLm8uFyIZZlJypZ3VE&callback=initMap&libraries=places"></script>
+  <script src="resources/javascript/mapsjavascript.js"></script>
+</body>
 </html>
