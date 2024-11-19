@@ -76,3 +76,7 @@ function showMenu() {
 function hideMenu() {
     navLinks.style.right = "-200px";
 }
+
+// lat ang lng for food stalls
+
+// 
