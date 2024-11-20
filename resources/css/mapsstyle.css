@@ -46,8 +46,7 @@ body {
     background: var(--light-peach);
 }
 
-/*NAVIGATION BAR WITH NAME AS LOGO*/
-
+/* NAVIGATION BAR */
 .header {
     position: fixed;
     top: 0;
@@ -67,7 +66,7 @@ body {
 
 .navbar {
     flex: 1;
-    text-align:  right;
+    text-align: right;
 }
 
 .navbar ul li {
@@ -93,7 +92,7 @@ body {
     transition: 0.5s;
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after {
     width: 100%;
 }
 
@@ -106,12 +105,12 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-/* for smaller version */
-@media(max-width: 900px){
+/* SMALLER SCREENS */
+@media(max-width: 900px) {
     .nav-links ul li {
         display: block;
     }
-    .nav-links{
+    .nav-links {
         position: absolute;
         background: var(--light-yellow);
         height: 100vh;
@@ -135,22 +134,21 @@ section {
 }
 
 /* MENU AND MAPS */
-.information{
+.information {
     width: 100%;
     margin: auto;
     text-align: center;
     position: relative;
 }
 
-.row{
+.row {
     margin: 5%;
     display: flex;
     justify-content: space-between;
 }
 
-.col{
+.col {
     flex-basis: 45%;
-    border-radius: 10px;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 20px;
@@ -171,10 +169,8 @@ section {
     color: var(--brown);
     border: 3px solid var(--dark-brown);
     padding: 12px 30px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
     font-size: 18px;
+    background: transparent;
     cursor: pointer;
     margin-bottom: 50px;
 }
@@ -184,6 +180,29 @@ section {
     background: var(--light-yellow);
     color: black;
     transition: 1s;
+}
+
+/* CATEGORY FILTER BUTTONS */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.category-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--light-yellow);
+    border: 2px solid var(--brown);
+    color: var(--dark-brown);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.category-buttons button.active {
+    background-color: var(--brown);
+    color: var(--light-peach);
 }
 
 /* RESTO AND MENU */
@@ -234,8 +253,8 @@ section {
 }
 
 @media(max-width: 900px) {
-    #food-stall-dropdown {
-        font-size: 15px;
+    #food-stall-dropdown option {
+        font-size: 10px;
     }
     .row{
         flex-direction: column;
@@ -254,8 +273,21 @@ section {
     }
 }
 
-/*FOOTER STYLE*/
+@media(max-width: 600px) {
+    .category-buttons {
+        flex-direction: column;
+    }
+    .category-buttons button {
+        margin: 10px 0px;
+        padding: 5px 10px;
+    }
+    #food-stall-dropdown {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+}
 
+/* FOOTER */
 footer {
     display: flex;
     justify-content: space-between;
@@ -319,27 +351,7 @@ footer {
     .footer-iconTop a {
         padding: .5rem;
     }
+    .row {
+        flex-direction: column;
+    }
 }
-
-/* CATEGORY BUTTONS */
-.category-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .category-buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: var(--light-yellow);
-    border: 2px solid var(--brown);
-    color: var(--dark-brown);
-    cursor: pointer;
-  }
-  
-  .category-buttons button.active {
-    background-color: var(--brown);
-    color: var(--light-peach);
-  }
-  
