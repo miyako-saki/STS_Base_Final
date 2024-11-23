@@ -236,21 +236,13 @@ section {
 }
 
 /* RESTO AND MENU */
-.resto ul li {
-    display: inline-block;
-    list-style: none;
-    justify-content: space-between;
-    padding: 10px 30px;
-    position: relative;
-}
-
-.resto ul li h2 {
+.resto h2 {
     margin-top: 10px;
     font-size: 30px;
     color: var(--dark-brown);
 }
 
-.resto ul li p {
+.resto p {
     margin-top: 10px;
     font-size: 20px;
 }
