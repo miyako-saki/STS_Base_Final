@@ -16,7 +16,7 @@ const foodStalls = [
   { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe" },
   { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe" },
   { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe" },
-  { lat: 14.630879413801864, lng: 121.04585945938373, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe" },
+  { lat: 14.630688863759561, lng: 121.04496832519625, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe" },
   { lat: 14.633797289785624, lng: 121.0406776498325, name: "Kim's Ramyun", priceRange: "150-200", category: "Fast Food" },
   { lat: 14.628413552796145, lng: 121.0424267041553, name: "RM Coffee & Tea", priceRange: "150-200", category: "Cafe" },
   { lat: 14.629711009912588, lng: 121.04096713564286, name: "Angus Tapa Centrale", priceRange: ">200", category: "Restaurant" },
@@ -24,6 +24,7 @@ const foodStalls = [
   { lat: 14.630658290417632, lng: 121.04126131048235, name: "Zipang", priceRange: ">200", category: "Restaurant" },
   { lat: 14.632746212727087, lng: 121.04208776949496, name: "Victorino's Restaurant", priceRange: ">200", category: "Restaurant" }
 ];
+
 
 function initMap() {
   const ciitLocation = { lat: 14.629457, lng: 121.041816 };
