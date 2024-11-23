@@ -106,4 +106,17 @@ function updateDetails(name, priceRange) {
 
  */
 
+//wag mong alisin kasi pang responsive toh
+
+//small menu for small screens
+var navLinks = document.getElementById("navLinks");
+
+function  showMenu(){
+  navLinks.style.right = "0";
+}
+
+function  hideMenu(){
+  navLinks.style.right = "-200px";
+}
+
  

@@ -29,15 +29,30 @@
       <div class="row">
         <!-- Food Selection -->
         <div class="col maininfo">
-          <div class="category-buttons">
-            <button onclick="setActiveCategory(this)" data-category="budget">Budget</button>
-            <button onclick="setActiveCategory(this)" data-category="affordable">Affordable</button>
-            <button onclick="setActiveCategory(this)" data-category="expensive">Expensive</button>
+          <div class="filter-group">
+            <h2>Filter By:</h2>
+            <select id="filter-dropdown" onchange="selectFoodStall()">
+              <option value="" selected>All</option>
+              <option value="" disabled>Prices:</option>
+              <option value="" >Less than P50</option>
+              <option value="" >P50 - P100</option>
+              <option value="" >P100 - P150</option>
+              <option value="" >P150 - P200</option>
+              <option value="" >More than P200</option>
+              <option value="" disabled>Category:</option>
+              <option value="" >Cafe</option>
+              <option value="" >Carinderia</option>
+              <option value="" >Fast Food</option>
+              <option value="" >Restaurant</option>
+              <option value="" >Interweave</option>
+            </select>
           </div>
 
-          <select id="food-stall-dropdown" onchange="selectFoodStall()">
-            <option value="" disabled selected>Select Your Food Option</option>
-          </select>
+          <div class="food-stall-group">
+            <select id="food-stall-dropdown" onchange="selectFoodStall()">
+              <option value="" disabled selected>Select Your Food Option</option>
+            </select>
+          </div>
 
           <!-- Restaurant Info -->
           <div class="resto">
