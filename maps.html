@@ -30,35 +30,27 @@
         <!-- Food Selection -->
         <div class="col maininfo">
           <div class="filter-group">
-            <h2>Filter By:</h2>
-            <select id="filter-dropdown" onchange="selectFoodStall()">
-              <option value="" selected>All</option>
-              <option value="" disabled>Prices:</option>
-              <option value="" >Less than P50</option>
-              <option value="" >P50 - P100</option>
-              <option value="" >P100 - P150</option>
-              <option value="" >P150 - P200</option>
-              <option value="" >More than P200</option>
-              <option value="" disabled>Category:</option>
-              <option value="" >Cafe</option>
-              <option value="" >Carinderia</option>
-              <option value="" >Fast Food</option>
-              <option value="" >Restaurant</option>
-              <option value="" >Interweave</option>
-            </select>
+            <h2>Filter By Price:</h2>
+            <label><input type="checkbox" class="price-filter" value="<50" onchange="applyFilters()"> Less than ₱50</label>
+            <label><input type="checkbox" class="price-filter" value="50-100" onchange="applyFilters()"> ₱50 - ₱100</label>
+            <label><input type="checkbox" class="price-filter" value="150-200" onchange="applyFilters()"> ₱150 - ₱200</label>
+            <label><input type="checkbox" class="price-filter" value=">200" onchange="applyFilters()"> More than ₱200</label>
           </div>
-
-          <div class="food-stall-group">
-            <select id="food-stall-dropdown" onchange="selectFoodStall()">
-              <option value="" disabled selected>Select Food Option</option>
-            </select>
+          <div class="filter-group">
+            <h2>Filter By Category:</h2>
+            <label><input type="checkbox" class="category-filter" value="Carinderia" onchange="applyFilters()"> Carinderia</label>
+            <label><input type="checkbox" class="category-filter" value="Cafe" onchange="applyFilters()"> Cafe</label>
+            <label><input type="checkbox" class="category-filter" value="Fast Food" onchange="applyFilters()"> Fast Food</label>
+            <label><input type="checkbox" class="category-filter" value="Restaurant" onchange="applyFilters()"> Restaurant</label>
           </div>
-
+          <select id="food-stall-dropdown" onchange="selectFoodStall()"></select>
+          
+          
           <!-- Restaurant Info -->
           <div class="resto">
-              <h2>Name: </h2><p>Resto Name</p>
+            <h2>Name:</h2><p id="selected-restaurant-name">Resto Name</p>
           </div>
-
+          
           <!-- Menu -->
           <div class="menu">
             <h2>Menu</h2>

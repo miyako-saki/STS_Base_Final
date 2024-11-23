@@ -3,35 +3,27 @@ let directionsService;
 let directionsRenderer;
 
 // Categorized food stalls
-const categorizedFoodStalls = {
-  budget: [
-    { lat: 14.62658832747117, lng: 121.03708157937747, name: "Eli's Kainan Lugaw", priceRange: "₱" },
-    { lat: 14.62947448192729, lng: 121.04386416664083, name: "A&A Cafe Food & Beverage", priceRange: "₱" },
-    { lat: 14.629552626557162, lng: 121.0409937876642, name: "Masaderia", priceRange: "₱" },
-    { lat: 14.62975679975855, lng: 121.04180774981167, name: "Ava's Carenderia", priceRange: "₱" },
-    { lat: 14.62904360637158, lng: 121.03865726478979, name: "Atty. Lugaw", priceRange: "₱" }
-    
-  ],
-  affordable: [
-    { lat: 14.630618, lng: 121.045587, name: "Chowking", priceRange: "₱₱" },
-    { lat: 14.628561277368682, lng: 121.03405615129736, name: "Mcdonald's Tomas Morato", priceRange: "₱₱" },
-    { lat: 14.63237515624982, lng: 121.04150738013324, name: "Famouse BBQ & Silog Station", priceRange: "₱₱" },
-    { lat: 14.629625404087946, lng: 121.04207628191672, name: "Seoulful Sweets", priceRange: "₱₱" },
-    { lat: 14.631167071388862, lng: 121.04612828013339, name: "Jollibee Kamias EDSA", priceRange: "₱₱" },
-    { lat: 14.630208462344818, lng: 121.04378888198417, name: "Enjoy Your Coffee - EYC", priceRange: "₱₱" },
-    { lat: 14.637260439551637, lng: 121.03647333840752, name: "Cafe Roo", priceRange: "₱₱" },
-    { lat: 14.63471567795594, lng: 121.03568891082023, name: "Cafe I'm Here", priceRange: "₱₱" },
-    { lat: 14.630797380925037, lng: 121.04496361082005, name: "Goca Tea and Cafe", priceRange: "₱₱" },
-    { lat: 14.633672277560846, lng: 121.04024777897007, name: "Kim's Ramyun", priceRange: "₱₱" },
-    { lat: 14.628359858532221, lng: 121.0415847587011, name: "RM Coffee & Tea", priceRange: "₱₱" }
-  ],
-  expensive: [
-    { lat: 14.629643531116596, lng: 121.04094530237712, name: "Angus Tapa Centrale", priceRange: "₱₱₱" },
-    { lat: 14.631285381961117, lng: 121.04125255649042, name: "Deo Gracias", priceRange: "₱₱₱" },
-    { lat: 14.6306323345192, lng: 121.04117011416216, name: "Zipang", priceRange: "₱₱₱" },
-    { lat: 14.632746198595271, lng: 121.04125628013328, name: "Victorino's Restaurant", priceRange: "₱₱₱" },
-  ]
-};
+const foodStalls = [
+  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia" },
+  { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia" },
+  { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia" },
+  { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe" },
+  { lat: 14.629443353068165, lng: 121.04412702769142, name: "A&A Cafe Food & Beverage", priceRange: "50-100", category: "Carinderia, Cafe" },
+  { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe" },
+  { lat: 14.628582053598462, lng: 121.03456577557405, name: "McDonald's Tomas Morato", priceRange: "150-200", category: "Fast Food" },
+  { lat: 14.63244551489845, lng: 121.04155220909627, name: "Famous BBQ & Silog Station", priceRange: "150-200", category: "Restaurant" },
+  { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Food" },
+  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe" },
+  { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe" },
+  { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe" },
+  { lat: 14.630879413801864, lng: 121.04585945938373, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe" },
+  { lat: 14.633797289785624, lng: 121.0406776498325, name: "Kim's Ramyun", priceRange: "150-200", category: "Fast Food" },
+  { lat: 14.628413552796145, lng: 121.0424267041553, name: "RM Coffee & Tea", priceRange: "150-200", category: "Cafe" },
+  { lat: 14.629711009912588, lng: 121.04096713564286, name: "Angus Tapa Centrale", priceRange: ">200", category: "Restaurant" },
+  { lat: 14.631368432795641, lng: 121.04206258483504, name: "Deo Gracias", priceRange: ">200", category: "Restaurant" },
+  { lat: 14.630658290417632, lng: 121.04126131048235, name: "Zipang", priceRange: ">200", category: "Restaurant" },
+  { lat: 14.632746212727087, lng: 121.04208776949496, name: "Victorino's Restaurant", priceRange: ">200", category: "Restaurant" }
+];
 
 function initMap() {
   const ciitLocation = { lat: 14.629457, lng: 121.041816 };
@@ -44,23 +36,15 @@ function initMap() {
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
   directionsRenderer.setMap(map);
+
+  populateDropdown(foodStalls);
 }
 
-function setActiveCategory(button) {
-  // Highlight selected button
-  document.querySelectorAll(".category-buttons button").forEach((btn) => btn.classList.remove("active"));
-  button.classList.add("active");
-
-  // Update dropdown with selected category
-  const category = button.dataset.category;
-  selectCategory(category);
-}
-
-function selectCategory(category) {
+function populateDropdown(stalls) {
   const dropdown = document.getElementById("food-stall-dropdown");
   dropdown.innerHTML = '<option value="" disabled selected>Select Your Food Option</option>';
 
-  categorizedFoodStalls[category].forEach((stall, index) => {
+  stalls.forEach((stall, index) => {
     const option = document.createElement("option");
     option.value = index;
     option.textContent = stall.name;
@@ -68,16 +52,33 @@ function selectCategory(category) {
   });
 }
 
+function applyFilters() {
+  const selectedPriceFilters = Array.from(document.querySelectorAll(".price-filter:checked")).map(el => el.value);
+  const selectedCategoryFilters = Array.from(document.querySelectorAll(".category-filter:checked")).map(el => el.value);
+
+  const filteredStalls = foodStalls.filter(stall => {
+    const matchesPrice = !selectedPriceFilters.length || selectedPriceFilters.includes(stall.priceRange);
+    const matchesCategory = !selectedCategoryFilters.length || selectedCategoryFilters.some(filter => stall.category.includes(filter));
+    return matchesPrice && matchesCategory;
+  });
+
+  populateDropdown(filteredStalls);
+}
+
 function selectFoodStall() {
   const dropdown = document.getElementById("food-stall-dropdown");
-  const category = document.querySelector(".category-buttons .active").dataset.category;
-  const selectedStall = categorizedFoodStalls[category][dropdown.value];
+  const selectedIndex = dropdown.value;
+  const restaurantNameElement = document.getElementById("selected-restaurant-name");
 
-  if (selectedStall) {
+  if (selectedIndex !== "") {
+    const selectedStall = foodStalls[selectedIndex];
     updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name);
-    updateDetails(selectedStall.name, selectedStall.priceRange);
+    restaurantNameElement.textContent = `${selectedStall.name}`;
+  } else {
+    restaurantNameElement.textContent = "No restaurant selected";
   }
 }
+
 
 function updateMap(lat, lng, title) {
   const ciitLocation = { lat: 14.629457, lng: 121.041816 };
@@ -97,11 +98,6 @@ function updateMap(lat, lng, title) {
       }
     }
   );
-}
-
-function updateDetails(name, priceRange) {
-  document.querySelector(".resto ul li:nth-child(1) p").textContent = name;
-  document.querySelector(".resto ul li:nth-child(2) p").textContent = priceRange;
 }
 
 

@@ -275,6 +275,22 @@ section {
 }
 
 @media(max-width: 900px) {
+
+    .filter-button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: 2px solid var(--brown);
+        background-color: var(--light-yellow);
+        color: var(--dark-brown);
+        cursor: pointer;
+      }
+      
+      .filter-button.active {
+        background-color: var(--brown);
+        color: var(--light-peach);
+      }
+      
+
     #food-stall-dropdown {
         font-size: 15px;
     }
