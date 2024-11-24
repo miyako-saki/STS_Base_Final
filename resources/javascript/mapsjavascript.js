@@ -6,9 +6,9 @@ const foodStalls = [
   { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", image: "" },
   { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia", image: "" },
   { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia", image: "" },
-  { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe", image: "resources/pictures/A&A" },
-  { lat: 14.629443353068165, lng: 121.04412702769142, name: "A&A Cafe Food & Beverage", priceRange: "50-100", category: "Carinderia, Cafe", image: "path/to/image5.jpg" },
-  { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe", image: "path/to/image6.jpg" },
+  { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe", image: "resources/pictures/Masaderia.jpg" },
+  { lat: 14.629443353068165, lng: 121.04412702769142, name: "A&A Cafe Food & Beverage", priceRange: "50-100", category: "Carinderia, Cafe", image: "resources/pictures/A&A.jpg" },
+  { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe", image: "resources/pictures/Seoulful Sweets.jpg" },
   { lat: 14.628582053598462, lng: 121.03456577557405, name: "McDonald's Tomas Morato", priceRange: "150-200", category: "Fast Food", image: "path/to/image7.jpg" },
   { lat: 14.63244551489845, lng: 121.04155220909627, name: "Famous BBQ & Silog Station", priceRange: "150-200", category: "Restaurant", image: "path/to/image8.jpg" },
   { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Food", image: "path/to/image9.jpg" },
@@ -78,7 +78,6 @@ function selectFoodStall() {
     updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.image);
     restaurantNameElement.textContent = `${selectedStall.name}`;
     restaurantImageElement.src = selectedStall.image; 
-    restaurantImageElement.alt = `${selectedStall.name} Menu`; 
   } else {
     restaurantNameElement.textContent = "No restaurant selected";
     restaurantMenuElement.textContent = ""; 

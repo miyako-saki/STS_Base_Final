@@ -261,6 +261,16 @@ section {
     font-size: 18px;
 }
 
+
+#restaurant-image {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto; 
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+}
+
 /* MAPS */
 .col.mainmaps #map {
     margin-top: -80px;
