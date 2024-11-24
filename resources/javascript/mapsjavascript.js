@@ -2,28 +2,28 @@ let map;
 let directionsService;
 let directionsRenderer;
 
-// Categorized food stalls
 const foodStalls = [
-  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", menu: "Lugaw, Tokwa't Baboy, Tapsilog" },
-  { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia" },
-  { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia" },
-  { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe" },
-  { lat: 14.629443353068165, lng: 121.04412702769142, name: "A&A Cafe Food & Beverage", priceRange: "50-100", category: "Carinderia, Cafe" },
-  { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe" },
-  { lat: 14.628582053598462, lng: 121.03456577557405, name: "McDonald's Tomas Morato", priceRange: "150-200", category: "Fast Food" },
-  { lat: 14.63244551489845, lng: 121.04155220909627, name: "Famous BBQ & Silog Station", priceRange: "150-200", category: "Restaurant" },
-  { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Food" },
-  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe" },
-  { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe" },
-  { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe" },
-  { lat: 14.630688863759561, lng: 121.04496832519625, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe" },
-  { lat: 14.633797289785624, lng: 121.0406776498325, name: "Kim's Ramyun", priceRange: "150-200", category: "Fast Food" },
-  { lat: 14.628413552796145, lng: 121.0424267041553, name: "RM Coffee & Tea", priceRange: "150-200", category: "Cafe" },
-  { lat: 14.629711009912588, lng: 121.04096713564286, name: "Angus Tapa Centrale", priceRange: ">200", category: "Restaurant" },
-  { lat: 14.631368432795641, lng: 121.04206258483504, name: "Deo Gracias", priceRange: ">200", category: "Restaurant" },
-  { lat: 14.630658290417632, lng: 121.04126131048235, name: "Zipang", priceRange: ">200", category: "Restaurant" },
-  { lat: 14.632746212727087, lng: 121.04208776949496, name: "Victorino's Restaurant", priceRange: ">200", category: "Restaurant" }
+  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", image: "" },
+  { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia", image: "path/to/image2.jpg" },
+  { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia", image: "path/to/image3.jpg" },
+  { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe", image: "path/to/image4.jpg" },
+  { lat: 14.629443353068165, lng: 121.04412702769142, name: "A&A Cafe Food & Beverage", priceRange: "50-100", category: "Carinderia, Cafe", image: "path/to/image5.jpg" },
+  { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe", image: "path/to/image6.jpg" },
+  { lat: 14.628582053598462, lng: 121.03456577557405, name: "McDonald's Tomas Morato", priceRange: "150-200", category: "Fast Food", image: "path/to/image7.jpg" },
+  { lat: 14.63244551489845, lng: 121.04155220909627, name: "Famous BBQ & Silog Station", priceRange: "150-200", category: "Restaurant", image: "path/to/image8.jpg" },
+  { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Food", image: "path/to/image9.jpg" },
+  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe", image: "path/to/image10.jpg" },
+  { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe", image: "path/to/image11.jpg" },
+  { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe", image: "path/to/image12.jpg" },
+  { lat: 14.630688863759561, lng: 121.04496832519625, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe", image: "path/to/image13.jpg" },
+  { lat: 14.633797289785624, lng: 121.0406776498325, name: "Kim's Ramyun", priceRange: "150-200", category: "Fast Food", image: "path/to/image14.jpg" },
+  { lat: 14.628413552796145, lng: 121.0424267041553, name: "RM Coffee & Tea", priceRange: "150-200", category: "Cafe", image: "path/to/image15.jpg" },
+  { lat: 14.629711009912588, lng: 121.04096713564286, name: "Angus Tapa Centrale", priceRange: ">200", category: "Restaurant", image: "path/to/image16.jpg" },
+  { lat: 14.631368432795641, lng: 121.04206258483504, name: "Deo Gracias", priceRange: ">200", category: "Restaurant", image: "path/to/image17.jpg" },
+  { lat: 14.630658290417632, lng: 121.04126131048235, name: "Zipang", priceRange: ">200", category: "Restaurant", image: "path/to/image18.jpg" },
+  { lat: 14.632746212727087, lng: 121.04208776949496, name: "Victorino's Restaurant", priceRange: ">200", category: "Restaurant", image: "path/to/image19.jpg" }
 ];
+
 
 
 function initMap() {
@@ -71,16 +71,19 @@ function selectFoodStall() {
   const selectedIndex = dropdown.value;
   const restaurantNameElement = document.getElementById("selected-restaurant-name");
   const restaurantMenuElement = document.getElementById("sample-menu");
+  const restaurantImageElement = document.getElementById("restaurant-image"); // New element for the image
 
   if (selectedIndex !== "") {
     const selectedStall = foodStalls[selectedIndex];
-    updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.menu);
+    updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.image);
     restaurantNameElement.textContent = `${selectedStall.name}`;
-    restaurantMenuElement.textContent = `${selectedStall.menu}`;
+    restaurantImageElement.src = selectedStall.image; 
+    restaurantImageElement.alt = `${selectedStall.name} Menu`; 
   } else {
     restaurantNameElement.textContent = "No restaurant selected";
+    restaurantMenuElement.textContent = ""; 
+    restaurantImageElement.src = ""; 
   }
-
 }
 
 
