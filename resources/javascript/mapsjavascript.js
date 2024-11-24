@@ -4,7 +4,7 @@ let directionsRenderer;
 
 // Categorized food stalls
 const foodStalls = [
-  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia" },
+  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", menu: "Lugaw, Tokwa't Baboy, Tapsilog" },
   { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia" },
   { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia" },
   { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe" },
@@ -70,14 +70,17 @@ function selectFoodStall() {
   const dropdown = document.getElementById("food-stall-dropdown");
   const selectedIndex = dropdown.value;
   const restaurantNameElement = document.getElementById("selected-restaurant-name");
+  const restaurantMenuElement = document.getElementById("sample-menu");
 
   if (selectedIndex !== "") {
     const selectedStall = foodStalls[selectedIndex];
-    updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name);
+    updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.menu);
     restaurantNameElement.textContent = `${selectedStall.name}`;
+    restaurantMenuElement.textContent = `${selectedStall.menu}`;
   } else {
     restaurantNameElement.textContent = "No restaurant selected";
   }
+
 }
 
 
