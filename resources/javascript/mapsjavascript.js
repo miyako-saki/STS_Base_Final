@@ -1,6 +1,7 @@
 let map;
 let directionsService;
 let directionsRenderer;
+let filteredStalls = [];
 
 const foodStalls = [
   { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", image: "" },
@@ -57,13 +58,20 @@ function applyFilters() {
   const selectedPriceFilters = Array.from(document.querySelectorAll(".price-filter:checked")).map(el => el.value);
   const selectedCategoryFilters = Array.from(document.querySelectorAll(".category-filter:checked")).map(el => el.value);
 
-  const filteredStalls = foodStalls.filter(stall => {
+  // Filter the stalls based on selected filters
+  filteredStalls = foodStalls.filter(stall => {
     const matchesPrice = !selectedPriceFilters.length || selectedPriceFilters.includes(stall.priceRange);
     const matchesCategory = !selectedCategoryFilters.length || selectedCategoryFilters.some(filter => stall.category.includes(filter));
     return matchesPrice && matchesCategory;
   });
 
   populateDropdown(filteredStalls);
+
+  // Clear the currently selected stall info if it is not in the filtered list
+  const dropdown = document.getElementById("food-stall-dropdown");
+  if (!filteredStalls[dropdown.value]) {
+    clearSelectedStallInfo();
+  }
 }
 
 function selectFoodStall() {
@@ -71,18 +79,28 @@ function selectFoodStall() {
   const selectedIndex = dropdown.value;
   const restaurantNameElement = document.getElementById("selected-restaurant-name");
   const restaurantMenuElement = document.getElementById("sample-menu");
-  const restaurantImageElement = document.getElementById("restaurant-image"); // New element for the image
+  const restaurantImageElement = document.getElementById("restaurant-image");
 
   if (selectedIndex !== "") {
-    const selectedStall = foodStalls[selectedIndex];
+    const selectedStall = filteredStalls[selectedIndex]; // Use the filtered stalls
     updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.image);
-    restaurantNameElement.textContent = `${selectedStall.name}`;
+    restaurantNameElement.textContent = selectedStall.name;
     restaurantImageElement.src = selectedStall.image; 
+    // You can add a sample menu here if you have a specific menu structure
+    restaurantMenuElement.textContent = "Sample menu for " + selectedStall.name; // Placeholder for actual menu
   } else {
-    restaurantNameElement.textContent = "No restaurant selected";
-    restaurantMenuElement.textContent = ""; 
-    restaurantImageElement.src = ""; 
+    clearSelectedStallInfo();
   }
+}
+
+function clearSelectedStallInfo() {
+  const restaurantNameElement = document.getElementById("selected-restaurant-name");
+  const restaurantMenuElement = document.getElementById("sample-menu");
+  const restaurantImageElement = document.getElementById("restaurant-image"); 
+
+  restaurantNameElement.textContent = "No restaurant selected";
+  restaurantMenuElement.textContent = ""; 
+  restaurantImageElement.src = ""; 
 }
 
 
