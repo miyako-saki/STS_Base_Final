@@ -4,9 +4,9 @@ let directionsRenderer;
 let filteredStalls = [];
 
 const foodStalls = [
-  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", image: "" },
-  { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia", image: "" },
-  { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia", image: "" },
+  { lat: 14.626566521839791, lng: 121.03703181082001, name: "Eli's Kainan Lugaw", priceRange: "<50", category: "Carinderia", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.629055631527793, lng: 121.03914525244323, name: "Atty. Lugaw", priceRange: "<50", category: "Carinderia", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.629939581645063, lng: 121.04207928536823, name: "Ava's Carenderia", priceRange: "50-100", category: "Carinderia", image: "Sample menu unavailable at the moment. Visit the stall for a menu." },
   { lat: 14.62966369592363, lng: 121.04109563743617, name: "Masaderia", priceRange: "50-100", category: "Cafe", image: "resources/pictures/Masaderia.jpg" },
   { lat: 14.629443353068165, lng: 121.04412702769142, name: "A&A Cafe Food & Beverage", priceRange: "50-100", category: "Carinderia, Cafe", image: "resources/pictures/A&A.jpg" },
   { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe", image: "resources/pictures/Seoulful Sweets.jpg" },
@@ -17,12 +17,12 @@ const foodStalls = [
   { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Cafe Roo.jpg" },
   { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Cafe I'm Here.jpg" },
   { lat: 14.630688863759561, lng: 121.04496832519625, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Goca Tea and Cafe.jpg" },
-  { lat: 14.633797289785624, lng: 121.0406776498325, name: "Kim's Ramyun", priceRange: "150-200", category: "Fast Food", image: "path/to/image14.jpg" },
-  { lat: 14.628413552796145, lng: 121.0424267041553, name: "RM Coffee & Tea", priceRange: "150-200", category: "Cafe", image: "path/to/image15.jpg" },
-  { lat: 14.629711009912588, lng: 121.04096713564286, name: "Angus Tapa Centrale", priceRange: ">200", category: "Restaurant", image: "path/to/image16.jpg" },
-  { lat: 14.631368432795641, lng: 121.04206258483504, name: "Deo Gracias", priceRange: ">200", category: "Restaurant", image: "path/to/image17.jpg" },
-  { lat: 14.630658290417632, lng: 121.04126131048235, name: "Zipang", priceRange: ">200", category: "Restaurant", image: "path/to/image18.jpg" },
-  { lat: 14.632746212727087, lng: 121.04208776949496, name: "Victorino's Restaurant", priceRange: ">200", category: "Restaurant", image: "path/to/image19.jpg" }
+  { lat: 14.633797289785624, lng: 121.0406776498325, name: "Kim's Ramyun", priceRange: "150-200", category: "Fast Food", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.628413552796145, lng: 121.0424267041553, name: "RM Coffee & Tea", priceRange: "150-200", category: "Cafe", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.629711009912588, lng: 121.04096713564286, name: "Angus Tapa Centrale", priceRange: ">200", category: "Restaurant", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.631368432795641, lng: 121.04206258483504, name: "Deo Gracias", priceRange: ">200", category: "Restaurant", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.630658290417632, lng: 121.04126131048235, name: "Zipang", priceRange: ">200", category: "Restaurant", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." },
+  { lat: 14.632746212727087, lng: 121.04208776949496, name: "Victorino's Restaurant", priceRange: ">200", category: "Restaurant", menu: "Sample menu unavailable at the moment. Visit the stall for a menu." }
 ];
 
 
@@ -85,11 +85,10 @@ function selectFoodStall() {
 
   if (selectedIndex !== "") {
     const selectedStall = filteredStalls[selectedIndex]; // Use the filtered stalls
-    updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.image);
+    updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.image, selectedStall.menu);
     restaurantNameElement.textContent = selectedStall.name;
+    restaurantMenuElement.textContent = selectedStall.menu;
     restaurantImageElement.src = selectedStall.image; 
-    // You can add a sample menu here if you have a specific menu structure
-    restaurantMenuElement.textContent = "Sample menu for " + selectedStall.name; // Placeholder for actual menu
   } else {
     clearSelectedStallInfo();
   }
