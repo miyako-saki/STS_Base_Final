@@ -38,8 +38,10 @@ function initMap() {
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
   directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById("directions-panel"));
 
-  populateDropdown(foodStalls);
+  filteredStalls = foodStalls;
+  populateDropdown(filteredStalls);
 }
 
 function populateDropdown(stalls) {
