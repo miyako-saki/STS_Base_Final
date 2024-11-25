@@ -265,8 +265,8 @@ section {
 #restaurant-image {
     max-width: 100%; 
     height: auto; 
-    display: block; 
-    margin: 20px auto; 
+    display: block;
+    margin-bottom: 50px;
     border: 2px solid #ccc; 
     border-radius: 8px; 
 }
