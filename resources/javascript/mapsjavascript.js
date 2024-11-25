@@ -13,7 +13,7 @@ const foodStalls = [
   { lat: 14.628582053598462, lng: 121.03456577557405, name: "McDonald's Tomas Morato", priceRange: "150-200", category: "Fast Food", image: "resources/pictures/Mcdonalds.jpg" },
   { lat: 14.63244551489845, lng: 121.04155220909627, name: "Famous BBQ & Silog Station", priceRange: "150-200", category: "Restaurant", image: "resources/pictures/Famous BBQ & Silog Station.jpg" },
   { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Food", image: "resources/pictures/Jollibee.jpg" },
-  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe", image: "resources/pictures/EYC - Enjoy Your Coffee.jpg" },
+  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe", image: "resources/pictures/EYC.jpg" },
   { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Cafe Roo.jpg" },
   { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Cafe I'm Here.jpg" },
   { lat: 14.630688863759561, lng: 121.04496832519625, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Goca Tea and Cafe.jpg" },
