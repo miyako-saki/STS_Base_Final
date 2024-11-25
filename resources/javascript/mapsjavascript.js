@@ -12,8 +12,8 @@ const foodStalls = [
   { lat: 14.629672119435103, lng: 121.0422264859392, name: "Seoulful Sweets", priceRange: "50-100", category: "Cafe", image: "resources/pictures/Seoulful Sweets.jpg" },
   { lat: 14.628582053598462, lng: 121.03456577557405, name: "McDonald's Tomas Morato", priceRange: "150-200", category: "Fast Food", image: "resources/pictures/Mcdonalds.jpg" },
   { lat: 14.63244551489845, lng: 121.04155220909627, name: "Famous BBQ & Silog Station", priceRange: "150-200", category: "Restaurant", image: "resources/pictures/Famous BBQ & Silog Station.jpg" },
-  { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Fo  od", image: "resources/pictures/Jollibee.jpg" },
-  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe", image: "resources/pictures/EYC.jpg" },
+  { lat: 14.631208609189754, lng: 121.0461229202884, name: "Jollibee Kamias EDSA", priceRange: "150-200", category: "Fast Food", image: "resources/pictures/Jollibee.jpg" },
+  { lat: 14.630229238403446, lng: 121.0445238118579, name: "Enjoy Your Coffee - EYC", priceRange: "150-200", category: "Cafe", image: "resources/pictures/EYC - Enjoy Your Coffee.jpg" },
   { lat: 14.637443292760793, lng: 121.03673338922412, name: "Cafe Roo", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Cafe Roo.jpg" },
   { lat: 14.634779020113863, lng: 121.03607933055585, name: "Cafe I'm Here", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Cafe I'm Here.jpg" },
   { lat: 14.630688863759561, lng: 121.04496832519625, name: "Goca Tea and Cafe", priceRange: "150-200", category: "Cafe", image: "resources/pictures/Goca Tea and Cafe.jpg" },
@@ -87,7 +87,7 @@ function selectFoodStall() {
     const selectedStall = filteredStalls[selectedIndex]; // Use the filtered stalls
     updateMap(selectedStall.lat, selectedStall.lng, selectedStall.name, selectedStall.image);
     restaurantNameElement.textContent = selectedStall.name;
-    restaurantImageElement.src = selectedStall.image;
+    restaurantImageElement.src = selectedStall.image; 
     // You can add a sample menu here if you have a specific menu structure
     restaurantMenuElement.textContent = "Sample menu for " + selectedStall.name; // Placeholder for actual menu
   } else {
@@ -98,34 +98,33 @@ function selectFoodStall() {
 function clearSelectedStallInfo() {
   const restaurantNameElement = document.getElementById("selected-restaurant-name");
   const restaurantMenuElement = document.getElementById("sample-menu");
-  const restaurantImageElement = document.getElementById("restaurant-image");
+  const restaurantImageElement = document.getElementById("restaurant-image"); 
 
   restaurantNameElement.textContent = "No restaurant selected";
-  restaurantMenuElement.textContent = "";
-  restaurantImageElement.src = "";
+  restaurantMenuElement.textContent = ""; 
+  restaurantImageElement.src = ""; 
 }
+
 
 function updateMap(lat, lng, title) {
   const ciitLocation = { lat: 14.629457, lng: 121.041816 };
   const destination = { lat, lng };
 
   directionsService.route(
-      {
-        origin: ciitLocation,
-        destination: destination,
-        travelMode: google.maps.TravelMode.WALKING,
-      },
-      (response, status) => {
-        if (status === "OK") {
-          directionsRenderer.setDirections(response);
-        } else {
-          console.error("Directions request failed: " + status);
-        }
+    {
+      origin: ciitLocation,
+      destination: destination,
+      travelMode: google.maps.TravelMode.WALKING,
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsRenderer.setDirections(response);
+      } else {
+        console.error("Directions request failed: " + status);
       }
+    }
   );
 }
-
-
 
 
 /* lat and lng for food stalls
@@ -158,3 +157,4 @@ function  hideMenu(){
   navLinks.style.right = "-200px";
 }
 
+ 

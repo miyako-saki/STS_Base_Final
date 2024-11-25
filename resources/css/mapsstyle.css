@@ -263,12 +263,12 @@ section {
 
 
 #restaurant-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border: 2px solid #ccc;
-    border-radius: 8px;
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto; 
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
 }
 
 /* MAPS */
@@ -293,13 +293,13 @@ section {
         background-color: var(--light-yellow);
         color: var(--dark-brown);
         cursor: pointer;
-    }
-
-    .filter-button.active {
+      }
+      
+      .filter-button.active {
         background-color: var(--brown);
         color: var(--light-peach);
-    }
-
+      }
+      
 
     #food-stall-dropdown {
         font-size: 15px;
@@ -409,9 +409,9 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
-
-.category-buttons button {
+  }
+  
+  .category-buttons button {
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 16px;
@@ -419,10 +419,10 @@ footer {
     border: 2px solid var(--brown);
     color: var(--dark-brown);
     cursor: pointer;
-}
-
-.category-buttons button.active {
+  }
+  
+  .category-buttons button.active {
     background-color: var(--brown);
     color: var(--light-peach);
-}
+  }
   

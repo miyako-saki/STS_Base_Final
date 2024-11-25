@@ -10,57 +10,56 @@
   <link rel="stylesheet" href="resources/css/mapsstyle.css">
 </head>
 <body>
-<!-- NAVIGATION BAR WITH LOGO -->
-<header class="header">
-  <a href="front.html" class="logo"><img src="resources/pictures/logo.png" alt="CIIT Logo"></a>
-  <nav class="navbar">
-    <div class="nav-links" id="navLinks">
-      <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
-      <ul>
-        <li><a href="front.html">Home</a></li>
-      </ul>
-    </div>
-    <i class="fa-solid fa-bars" onclick="showMenu()"></i>
-  </nav>
-</header>
+  <!-- NAVIGATION BAR WITH LOGO -->
+  <header class="header">
+    <a href="front.html" class="logo"><img src="resources/pictures/logo.png" alt="CIIT Logo"></a>
+    <nav class="navbar">
+      <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="front.html">Home</a></li>
+        </ul>
+      </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </header>
 
-<section class="main">
-  <div class="information">
-    <div class="row">
-      <!-- Food Selection -->
-      <div class="col maininfo">
-        <div class="filter-group">
-          <h2>Filter By Price:</h2>
-          <label><input type="checkbox" class="price-filter" value="<50" onchange="applyFilters()"> Less than ₱50</label>
-          <label><input type="checkbox" class="price-filter" value="50-100" onchange="applyFilters()"> ₱50 - ₱100</label>
-          <label><input type="checkbox" class="price-filter" value="150-200" onchange="applyFilters()"> ₱150 - ₱200</label>
-          <label><input type="checkbox" class="price-filter" value=">200" onchange="applyFilters()"> More than ₱200</label>
-        </div>
-        <div class="filter-group">
-          <h2>Filter By Category:</h2>
-          <label><input type="checkbox" class="category-filter" value="Carinderia" onchange="applyFilters()"> Carinderia</label>
-          <label><input type="checkbox" class="category-filter" value="Cafe" onchange="applyFilters()"> Cafe</label>
-          <label><input type="checkbox" class="category-filter" value="Fast Food" onchange="applyFilters()"> Fast Food</label>
-          <label><input type="checkbox" class="category-filter" value="Restaurant" onchange="applyFilters()"> Restaurant</label>
-        </div>
-        <select id="food-stall-dropdown" onchange="selectFoodStall()"></select>
-
-
-        <!-- Restaurant Info -->
-        <div class="resto">
-          <h2>Name:</h2><p id="selected-restaurant-name">Resto Name</p>
-        </div>
-
-        <!-- Menu -->
-        <div class="menu">
-          <h2>Menu</h2>
-          <h3>This is only a sample menu. Visit the stall for more information on the menu.</h3>
-          <ul>
-            <li><p id="sample-menu"></p></li>
-          </ul>
-          <img id="restaurant-image" src="" alt="Restaurant Menu">
-        </div>
-        </div>
+  <section class="main">
+    <div class="information">
+      <div class="row">
+        <!-- Food Selection -->
+        <div class="col maininfo">
+          <div class="filter-group">
+            <h2>Filter By Price:</h2>
+            <label><input type="checkbox" class="price-filter" value="<50" onchange="applyFilters()"> Less than ₱50</label>
+            <label><input type="checkbox" class="price-filter" value="50-100" onchange="applyFilters()"> ₱50 - ₱100</label>
+            <label><input type="checkbox" class="price-filter" value="150-200" onchange="applyFilters()"> ₱150 - ₱200</label>
+            <label><input type="checkbox" class="price-filter" value=">200" onchange="applyFilters()"> More than ₱200</label>
+          </div>
+          <div class="filter-group">
+            <h2>Filter By Category:</h2>
+            <label><input type="checkbox" class="category-filter" value="Carinderia" onchange="applyFilters()"> Carinderia</label>
+            <label><input type="checkbox" class="category-filter" value="Cafe" onchange="applyFilters()"> Cafe</label>
+            <label><input type="checkbox" class="category-filter" value="Fast Food" onchange="applyFilters()"> Fast Food</label>
+            <label><input type="checkbox" class="category-filter" value="Restaurant" onchange="applyFilters()"> Restaurant</label>
+          </div>
+          <select id="food-stall-dropdown" onchange="selectFoodStall()"></select>
+          
+          
+          <!-- Restaurant Info -->
+          <div class="resto">
+            <h2>Name:</h2><p id="selected-restaurant-name">Resto Name</p>
+          </div>
+          
+            <!-- Menu -->
+            <div class="menu">
+              <h2>Menu</h2>
+              <h3>This is only a sample menu. Visit the stall for more information on the menu.</h3>
+              <ul>
+                <li><p id="sample-menu"></p></li>
+              </ul>
+              <img id="restaurant-image" src="" alt="Restaurant Menu">
+            </div>
 
         <!-- Maps Section -->
         <div class="col mainmaps">
@@ -69,21 +68,21 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-text">
-    <p>&copy; 2024 Alliza Caberte, David Wagan, Vhiane Gulapa, Tesla Manasan | All Rights Reserved</p>
-  </div>
-  <div class="footer-iconTop">
-    <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>&copy; 2024 Alliza Caberte, David Wagan, Vhiane Gulapa, Tesla Manasan | All Rights Reserved</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
+    </div>
+  </footer>
 
-<!-- JavaScript -->
-<script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-vNnJ1hBE_AN4JpLm8uFyIZZlJypZ3VE&callback=initMap&libraries=places"></script>
-<script src="resources/javascript/mapsjavascript.js"></script>
+  <!-- JavaScript -->
+  <script src="https://kit.fontawesome.com/13665e3f06.js" crossorigin="anonymous"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-vNnJ1hBE_AN4JpLm8uFyIZZlJypZ3VE&callback=initMap&libraries=places"></script>
+  <script src="resources/javascript/mapsjavascript.js"></script>
 </body>
 </html>
