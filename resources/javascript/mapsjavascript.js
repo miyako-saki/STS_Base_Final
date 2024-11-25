@@ -38,6 +38,7 @@ function initMap() {
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
   directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById("directions-panel"));
 
   filteredStalls = foodStalls;
   populateDropdown(filteredStalls);
