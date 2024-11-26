@@ -46,7 +46,7 @@ function initMap() {
 
 function populateDropdown(stalls) {
   const dropdown = document.getElementById("food-stall-dropdown");
-  dropdown.innerHTML = '<option value="" disabled selected>Select Your Food Option</option>';
+  dropdown.innerHTML = '<option value="" disabled selected>Select Food Option</option>';
 
   stalls.forEach((stall, index) => {
     const option = document.createElement("option");

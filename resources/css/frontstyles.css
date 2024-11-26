@@ -108,6 +108,9 @@ section {
 
 /* for smaller version */
 @media(max-width: 900px){
+    .logo img {
+        width: 60px;
+    }
     .nav-links ul li {
         display: block;
     }
@@ -251,7 +254,7 @@ section {
 .col img {
     max-width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 250px;
     border-radius: 10px;
 }
 
@@ -305,15 +308,16 @@ section {
 }
 @media (max-width: 700px) {
     .features h2 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
-
     .col h3 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
-
     .col p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    .feedback {
+        font-size: 1.5rem;
     }
 }
 
@@ -342,12 +346,12 @@ section {
 .contact-details h4 {
     font-size: 2.1rem;
     color: var(--dark-brown);
-    margin-top: 5rem;
+    margin-top: 0.5rem;
 }
 
 .contact-details p {
     font-size: 1.6rem;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0 1rem;
     cursor: text;
     color: var(--brown);
 }
@@ -370,21 +374,21 @@ section {
 }
 
 .contact-details i {
-    margin: 0 2rem 0 2rem;
+    margin: 0 1rem 0 1rem;
 }
 
 @media (max-width: 700px) {
     .contacthead {
-        font-size: 40px;
+        font-size: 2rem;
     }
     .contact-details h4 {
-        font-size: 30px;
+        font-size: 1.5rem;
     }
     .contact-details p{
-        font-size: 20px;
+        font-size: 1rem;
     }
     .contact-details a{
-        font-size: 20px;
+        font-size: 1rem;
     }
 }
 
@@ -395,12 +399,12 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem 9%;
+    padding: 1rem 9%;
     background: var(--brown);
 }
 
 .footer-text p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: var(--light-peach);
 }
 
@@ -445,7 +449,7 @@ footer {
 
 @media(max-width: 900px) {
     .footer p {
-        font-size: 20px;
+        font-size: 1rem;
     }
     .footer-iconTop a i {
         font-size: 18px;

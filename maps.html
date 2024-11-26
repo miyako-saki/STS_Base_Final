@@ -30,25 +30,27 @@
         <!-- Food Selection -->
         <div class="col maininfo">
           <div class="filter-group">
-            <h2>Filter By Price:</h2>
+            <h2>Filter by Price:</h2>
             <label><input type="checkbox" class="price-filter" value="<50" onchange="applyFilters()"> Less than ₱50</label>
             <label><input type="checkbox" class="price-filter" value="50-100" onchange="applyFilters()"> ₱50 - ₱100</label>
             <label><input type="checkbox" class="price-filter" value="150-200" onchange="applyFilters()"> ₱150 - ₱200</label>
             <label><input type="checkbox" class="price-filter" value=">200" onchange="applyFilters()"> More than ₱200</label>
           </div>
           <div class="filter-group">
-            <h2>Filter By Category:</h2>
+            <h2>Filter by Category:</h2>
             <label><input type="checkbox" class="category-filter" value="Carinderia" onchange="applyFilters()"> Carinderia</label>
             <label><input type="checkbox" class="category-filter" value="Cafe" onchange="applyFilters()"> Cafe</label>
             <label><input type="checkbox" class="category-filter" value="Fast Food" onchange="applyFilters()"> Fast Food</label>
             <label><input type="checkbox" class="category-filter" value="Restaurant" onchange="applyFilters()"> Restaurant</label>
           </div>
-          <select id="food-stall-dropdown" onchange="selectFoodStall()"></select>
+          <div class="food-stall-group">
+            <select  id="food-stall-dropdown" onchange="selectFoodStall()"></select>
+          </div>
           
           
           <!-- Restaurant Info -->
           <div class="resto">
-            <h2>Name:</h2><p id="selected-restaurant-name">Resto Name</p>
+            <h2>Name:</h2><p id="selected-restaurant-name">No restaurant selected</p>
           </div>
 
             <!-- Menu -->
@@ -74,7 +76,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-text">
-      <p>&copy; 2024 Alliza Caberte, David Wagan, Vhiane Gulapa, Tesla Manasan | All Rights Reserved</p>
+      <p>Copyright &copy; 2024 by Cheers! Crazy Cats of Caloocan | All Rights Reserved</p>
     </div>
     <div class="footer-iconTop">
       <a href="#"><i class="fa-solid fa-chevron-up"></i></a>

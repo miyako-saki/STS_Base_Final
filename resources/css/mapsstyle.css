@@ -108,6 +108,9 @@ section {
 
 /* for smaller version */
 @media(max-width: 900px){
+    .logo img {
+        width: 60px;
+    }
     .nav-links ul li {
         display: block;
     }
@@ -178,29 +181,13 @@ section {
     color: var(--dark-brown);
 }
 
-.filter-group select {
-    flex: 1;
-    max-width: 300px;
-}
-
-#filter-dropdown {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--brown);
-    border: 3px solid var(--dark-brown);
-    padding: 12px 30px;
-    background: transparent;
-    position: relative;
-    font-size: 18px;
+.filter-group label {
+    font-size: 16px;
+    color: var(--dark-brown);
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
-    margin-bottom: 50px;
-}
-
-#filter-dropdown:hover {
-    border: 3px solid #6f4e37;
-    background: var(--light-yellow);
-    color: black;
-    transition: 1s;
 }
 
 .food-stall-group {
@@ -284,45 +271,33 @@ section {
     border-top: 1px solid #6f4e37;
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1280px) {
+    .row{
+        flex-direction: column;
+    }
+}
 
-    .filter-button {
-        padding: 10px 20px;
-        margin: 5px;
-        border: 2px solid var(--brown);
-        background-color: var(--light-yellow);
-        color: var(--dark-brown);
-        cursor: pointer;
-      }
-      
-      .filter-button.active {
-        background-color: var(--brown);
-        color: var(--light-peach);
-      }
-      
+@media(max-width: 900px) {
 
     #food-stall-dropdown {
         font-size: 15px;
     }
-    .row{
-        flex-direction: column;
+    .resto h2 {
+        font-size: 1.5rem;
     }
-    .resto ul li h2 {
-        font-size: 20px;
-    }
-    .resto ul li p {
-        font-size: 18px;
+    .resto p {
+        font-size: 1rem;
     }
     .menu h2 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
-    .menu ul li p {
-        font-size: 16px;
+    .menu h3 {
+        font-size: 1rem;
     }
     .filter-group {
         flex-direction: column;
         gap: 10px;
-        align-items: flex-start;
+        align-items: center;
     }
     .filter-group h2,
     .filter-group select {
@@ -335,6 +310,19 @@ section {
         width: 100%;
         font-size: 15px;
     }
+    .filter-button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: 2px solid var(--brown);
+        background-color: var(--light-yellow);
+        color: var(--dark-brown);
+        cursor: pointer;
+    }
+
+    .filter-button.active {
+        background-color: var(--brown);
+        color: var(--light-peach);
+    }
 }
 
 /*FOOTER STYLE*/
@@ -344,12 +332,12 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem 9%;
+    padding: 1rem 9%;
     background: var(--brown);
 }
 
 .footer-text p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: var(--light-peach);
 }
 
@@ -394,7 +382,7 @@ footer {
 
 @media(max-width: 900px) {
     .footer p {
-        font-size: 20px;
+        font-size: 1rem;
     }
     .footer-iconTop a i {
         font-size: 18px;
@@ -403,26 +391,3 @@ footer {
         padding: .5rem;
     }
 }
-
-/* CATEGORY BUTTONS */
-.category-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .category-buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: var(--light-yellow);
-    border: 2px solid var(--brown);
-    color: var(--dark-brown);
-    cursor: pointer;
-  }
-  
-  .category-buttons button.active {
-    background-color: var(--brown);
-    color: var(--light-peach);
-  }
-  
